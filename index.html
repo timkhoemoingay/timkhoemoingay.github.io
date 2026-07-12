@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Tìm Khỏe Mỗi Ngày chia sẻ thông tin dinh dưỡng, lối sống lành mạnh và sản phẩm hỗ trợ chăm sóc sức khỏe."
+    >
+
+    <title>Tìm Khỏe Mỗi Ngày</title>
+
+    <!-- Biểu tượng trên tab trình duyệt -->
+    <link
+        rel="icon"
+        href="data:image/svg+xml,
+        %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E
+        %3Cpath fill='%23e62628' d='M50 87C18 65 8 47 13 29 18 10 41 7 50 24 59 7 82 10 87 29 92 47 82 65 50 87Z'/%3E
+        %3Cpath fill='%2335a516' d='M50 87C53 56 66 32 86 19 80 50 70 72 50 87Z'/%3E
+        %3C/svg%3E"
+    >
+
+    <style>
+        /* ==================================================
+           MÀU SẮC CHÍNH
+           Có thể thay đổi các mã màu dưới đây
+        ================================================== */
+        :root {
+            --primary: #1486ce;
+            --primary-dark: #075d98;
+            --primary-light: #eaf7ff;
+
+            --green: #3aaa18;
+            --green-dark: #247d0d;
+            --green-light: #eefae8;
+
+            --red: #e5232b;
+            --yellow: #f6c344;
+
+            --text: #17344a;
+            --text-light: #637888;
+
+            --white: #ffffff;
+            --background: #f6fbff;
+            --border: #dcecf5;
+
+            --shadow:
+                0 18px 45px rgba(15, 103, 160, 0.13);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            color: var(--text);
+            background: var(--white);
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+            line-height: 1.65;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        img,
+        svg {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-light {
+            background: var(--background);
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 46px;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2,
+        .about-content h2 {
+            margin-bottom: 15px;
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+        }
+
+        .section-heading p,
+        .about-content > p {
+            color: var(--text-light);
+        }
+
+        /* ==================================================
+           LOGO
+        ================================================== */
+        .logo-link {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            display: block;
+            width: 155px;
+            height: auto;
+        }
+
+        .footer-brand-logo {
+            display: block;
+            width: 185px;
+            height: auto;
+        }
+
+        /* ==================================================
+           THANH MENU
+        ================================================== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 5px 20px rgba(20, 75, 110, 0.05);
+            backdrop-filter: blur(12px);
+        }
+
+        .navbar {
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            display: inline-block;
+            padding: 8px 0;
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .nav-links a::after {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            content: "";
+            background: var(--green);
+            transform: scaleX(0);
+            transition: transform 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-dark);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-contact {
+            padding: 11px 18px !important;
+            color: var(--white) !important;
+            background: var(--green);
+            border-radius: 12px;
+        }
+
+        .nav-contact::after {
+            display: none;
+        }
+
+        .nav-contact:hover {
+            background: var(--green-dark);
+        }
+
+        .menu-button {
+            display: none;
+            width: 46px;
+            height: 46px;
+            color: var(--primary-dark);
+            background: var(--primary-light);
+            border: 0;
+            border-radius: 13px;
+            cursor: pointer;
+            font-size: 23px;
+        }
+
+        /* ==================================================
+           NÚT BẤM
+        ================================================== */
+        .button {
+            min-height: 50px;
+            display: inline-flex;
+            padding: 12px 23px;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            color: var(--white);
+            background: var(--green);
+            border: 2px solid var(--green);
+            border-radius: 13px;
+            font-weight: 800;
+            box-shadow:
+                0 9px 22px rgba(58, 170, 24, 0.18);
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+            box-shadow:
+                0 13px 28px rgba(58, 170, 24, 0.24);
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            color: var(--primary-dark);
+            background: var(--white);
+            border-color: var(--primary);
+            box-shadow: none;
+        }
+
+        .button-outline:hover {
+            color: var(--white);
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* ==================================================
+           PHẦN ĐẦU TRANG
+        ================================================== */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 95px 0;
+            background:
+                radial-gradient(
+                    circle at 5% 15%,
+                    rgba(20, 134, 206, 0.16),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 92% 18%,
+                    rgba(58, 170, 24, 0.15),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f5fbff 0%,
+                    #ffffff 55%,
+                    #f3fced 100%
+                );
+        }
+
+        .hero::before {
+            position: absolute;
+            top: 70px;
+            right: -100px;
+            width: 330px;
+            height: 330px;
+            content: "";
+            border: 55px solid rgba(58, 170, 24, 0.04);
+            border-radius: 50%;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.12fr 0.88fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            margin-bottom: 22px;
+            padding: 9px 15px;
+            align-items: center;
+            gap: 8px;
+            color: var(--green-dark);
+            background: var(--green-light);
+            border: 1px solid #d8efca;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .hero h1 {
+            max-width: 720px;
+            margin-bottom: 21px;
+            font-size: clamp(42px, 6vw, 67px);
+            line-height: 1.07;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin-bottom: 31px;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-note {
+            margin-top: 23px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .hero-note strong {
+            color: var(--primary-dark);
+        }
+
+        .hero-card {
+            position: relative;
+            padding: 38px 34px 34px;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid var(--border);
+            border-radius: 31px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card::before {
+            position: absolute;
+            top: -17px;
+            right: 30px;
+            padding: 7px 13px;
+            content: "Sống khỏe mỗi ngày";
+            color: var(--white);
+            background: var(--primary);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .hero-logo-wrap {
+            width: 260px;
+            margin: 0 auto 23px;
+        }
+
+        .hero-card h3 {
+            margin-bottom: 19px;
+            text-align: center;
+            font-size: 23px;
+        }
+
+        .benefit-list {
+            display: grid;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            color: var(--text-light);
+        }
+
+        .check {
+            width: 25px;
+            height: 25px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            background: var(--green);
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        /* ==================================================
+           THỐNG KÊ NHANH
+        ================================================== */
+        .quick-info {
+            position: relative;
+            z-index: 2;
+            margin-top: -34px;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 21px;
+            box-shadow: var(--shadow);
+        }
+
+        .quick-item {
+            padding: 23px;
+            text-align: center;
+        }
+
+        .quick-item + .quick-item {
+            border-left: 1px solid var(--border);
+        }
+
+        .quick-item strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--primary-dark);
+            font-size: 20px;
+        }
+
+        .quick-item span {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* ==================================================
+           THẺ NỘI DUNG
+        ================================================== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            padding: 31px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 21px;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .card::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 4px;
+            content: "";
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--primary),
+                    var(--green)
+                );
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-6px);
+        }
+
+        .card-icon {
+            width: 61px;
+            height: 61px;
+            display: grid;
+            margin-bottom: 22px;
+            place-items: center;
+            background: var(--primary-light);
+            border-radius: 17px;
+            font-size: 30px;
+        }
+
+        .card:nth-child(2) .card-icon {
+            background: var(--green-light);
+        }
+
+        .card:nth-child(3) .card-icon {
+            background: #fff2f2;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: var(--text-light);
+        }
+
+        /* ==================================================
+           GIỚI THIỆU
+        ================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .about-visual {
+            position: relative;
+            min-height: 440px;
+            display: grid;
+            overflow: hidden;
+            place-items: center;
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--primary-light),
+                    var(--green-light)
+                );
+            border: 1px solid var(--border);
+            border-radius: 31px;
+        }
+
+        .about-visual::before,
+        .about-visual::after {
+            position: absolute;
+            content: "";
+            border-radius: 50%;
+        }
+
+        .about-visual::before {
+            top: -45px;
+            left: -45px;
+            width: 170px;
+            height: 170px;
+            background: rgba(20, 134, 206, 0.11);
+        }
+
+        .about-visual::after {
+            right: -60px;
+            bottom: -60px;
+            width: 210px;
+            height: 210px;
+            background: rgba(58, 170, 24, 0.12);
+        }
+
+        .about-logo {
+            position: relative;
+            z-index: 1;
+            width: 300px;
+            padding: 28px;
+            background: var(--white);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-content > p {
+            margin-bottom: 25px;
+        }
+
+        .about-points {
+            display: grid;
+            gap: 17px;
+            margin-bottom: 29px;
+        }
+
+        .about-point {
+            display: flex;
+            gap: 14px;
+        }
+
+        .about-point strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .about-point p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==================================================
+           QUY TRÌNH / GIÁ TRỊ
+        ================================================== */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 23px;
+        }
+
+        .step {
+            position: relative;
+            padding: 28px;
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .step-number {
+            width: 49px;
+            height: 49px;
+            display: grid;
+            margin: 0 auto 18px;
+            place-items: center;
+            color: var(--white);
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--green)
+                );
+            border-radius: 15px;
+            font-size: 19px;
+            font-weight: 900;
+        }
+
+        .step h3 {
+            margin-bottom: 9px;
+            font-size: 19px;
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* ==================================================
+           LIÊN HỆ
+        ================================================== */
+        .contact-box {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            overflow: hidden;
+            padding: 47px;
+            align-items: center;
+            gap: 35px;
+            color: var(--white);
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary) 55%,
+                    #159f94
+                );
+            border-radius: 27px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-box::after {
+            position: absolute;
+            top: -80px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            content: "";
+            border: 45px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .contact-content,
+        .contact-actions {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 11px;
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+        }
+
+        .contact-box p {
+            max-width: 680px;
+            color: rgba(255, 255, 255, 0.84);
+        }
+
+        .contact-actions {
+            display: grid;
+            gap: 11px;
+        }
+
+        .phone-button {
+            min-width: 220px;
+            color: var(--primary-dark);
+            background: var(--white);
+            border-color: var(--white);
+            box-shadow: none;
+        }
+
+        .phone-button:hover {
+            color: var(--primary-dark);
+            background: #ecf8ff;
+            border-color: #ecf8ff;
+        }
+
+        .phone-caption {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+        }
+
+        /* ==================================================
+           LƯU Ý
+        ================================================== */
+        .disclaimer {
+            margin-top: 30px;
+            padding: 21px 22px;
+            color: #68604b;
+            background: #fff9e8;
+            border: 1px solid #eedc9f;
+            border-radius: 15px;
+            font-size: 14px;
+        }
+
+        .disclaimer strong {
+            color: #805d00;
+        }
+
+        /* ==================================================
+           CHÂN TRANG
+        ================================================== */
+        .footer {
+            padding: 50px 0 25px;
+            color: rgba(255, 255, 255, 0.76);
+            background: #0e2b3e;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr 0.75fr;
+            gap: 55px;
+            padding-bottom: 34px;
+        }
+
+        .footer-logo-box {
+            display: inline-block;
+            padding: 12px 16px;
+            background: var(--white);
+            border-radius: 18px;
+        }
+
+        .footer-description {
+            max-width: 430px;
+            margin-top: 18px;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+            color: var(--white);
+            font-size: 17px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            padding-top: 23px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 14px;
+        }
+
+        /* ==================================================
+           NÚT GỌI ĐIỆN CỐ ĐỊNH
+        ================================================== */
+        .floating-phone {
+            position: fixed;
+            right: 21px;
+            bottom: 21px;
+            z-index: 900;
+            width: 61px;
+            height: 61px;
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            background: var(--green);
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            box-shadow:
+                0 12px 32px rgba(37, 126, 14, 0.35);
+            font-size: 25px;
+            transition: transform 0.2s ease;
+        }
+
+        .floating-phone:hover {
+            transform: scale(1.08);
+        }
+
+        /* ==================================================
+           HIỂN THỊ TRÊN MÁY TÍNH BẢNG
+        ================================================== */
+        @media (max-width: 900px) {
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 96px;
+                right: 20px;
+                left: 20px;
+                display: none;
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+                padding: 17px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 2px;
+                background: var(--white);
+                border: 1px solid var(--border);
+                border-radius: 17px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 12px 13px;
+            }
+
+            .nav-contact {
+                margin-top: 6px;
+                text-align: center;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 70px 0 90px;
+            }
+
+            .hero-grid {
+                gap: 48px;
+            }
+
+            .hero-copy {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .cards,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                min-height: 380px;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-box p {
+                margin: 0 auto;
+            }
+
+            .contact-actions {
+                justify-items: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* ==================================================
+           HIỂN THỊ TRÊN ĐIỆN THOẠI
+        ================================================== */
+        @media (max-width: 600px) {
+            .container {
+                width: min(100% - 28px, 1120px);
+            }
+
+            .section {
+                padding: 62px 0;
+            }
+
+            .navbar {
+                min-height: 84px;
+            }
+
+            .brand-logo {
+                width: 126px;
+            }
+
+            .nav-links {
+                top: 84px;
+                right: 14px;
+                left: 14px;
+            }
+
+            .hero {
+                padding: 58px 0 78px;
+            }
+
+            .hero h1 {
+                font-size: 41px;
+                letter-spacing: -1px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero-card,
+            .card,
+            .step,
+            .contact-box {
+                padding: 25px;
+            }
+
+            .hero-logo-wrap {
+                width: 220px;
+            }
+
+            .quick-info {
+                margin-top: -24px;
+            }
+
+            .quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-item + .quick-item {
+                border-top: 1px solid var(--border);
+                border-left: 0;
+            }
+
+            .about-visual {
+                min-height: 320px;
+            }
+
+            .about-logo {
+                width: 235px;
+                padding: 22px;
+            }
+
+            .contact-box {
+                border-radius: 21px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-brand-logo {
+                width: 160px;
+            }
+
+            .floating-phone {
+                right: 15px;
+                bottom: 15px;
+                width: 57px;
+                height: 57px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================================================
+         MẪU LOGO SVG
+         Logo được đặt trực tiếp trong file HTML
+    ================================================== -->
+    <svg
+        width="0"
+        height="0"
+        style="position:absolute"
+        aria-hidden="true"
+    >
+        <defs>
+            <linearGradient
+                id="redHeart"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+            >
+                <stop offset="0%" stop-color="#ff3a32"/>
+                <stop offset="100%" stop-color="#c90019"/>
+            </linearGradient>
+
+            <linearGradient
+                id="greenHeart"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+            >
+                <stop offset="0%" stop-color="#76d51e"/>
+                <stop offset="100%" stop-color="#188c05"/>
+            </linearGradient>
+
+            <linearGradient
+                id="leafGreen"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+            >
+                <stop offset="0%" stop-color="#70ce20"/>
+                <stop offset="100%" stop-color="#178b08"/>
+            </linearGradient>
+
+            <symbol
+                id="full-logo"
+                viewBox="0 0 420 310"
+            >
+                <!-- Đường nhịp tim trái -->
+                <path
+                    d="M0 182 H55 L65 171 L75 201 L87 143 L97 190 L108 175 H142"
+                    fill="none"
+                    stroke="#ef2531"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+                <!-- Đường nhịp tim phải -->
+                <path
+                    d="M276 182 H315 L324 169 L336 199 L346 146 L357 190 L367 175 H420"
+                    fill="none"
+                    stroke="#39a918"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+
+                <!-- Trái tim đỏ -->
+                <path
+                    d="
+                        M205 177
+                        C150 144 76 102 66 52
+                        C58 12 87 -8 119 5
+                        C145 15 163 38 174 65
+                        C143 45 116 46 98 63
+                        C78 83 95 114 119 135
+                        C142 155 165 170 205 196
+                        Z
+                    "
+                    fill="url(#redHeart)"
+                />
+
+                <!-- Viền sáng tim đỏ -->
+                <path
+                    d="
+                        M197 160
+                        C151 128 98 96 91 57
+                        C87 34 104 20 123 26
+                        C144 33 160 53 173 77
+                    "
+                    fill="none"
+                    stroke="#ff7c74"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    opacity="0.8"
+                />
+
+                <!-- Trái tim xanh -->
+                <path
+                    d="
+                        M205 177
+                        C261 144 336 102 346 52
+                        C354 12 325 -8 293 5
+                        C267 15 249 38 238 65
+                        C269 45 296 46 314 63
+                        C334 83 317 114 293 135
+                        C270 155 247 170 205 196
+                        Z
+                    "
+                    fill="url(#greenHeart)"
+                />
+
+                <!-- Viền sáng tim xanh -->
+                <path
+                    d="
+                        M213 160
+                        C259 128 312 96 319 57
+                        C323 34 306 20 287 26
+                        C266 33 250 53 237 77
+                    "
+                    fill="none"
+                    stroke="#9ef45e"
+                    stroke-width="7"
+                    stroke-linecap="round"
+                    opacity="0.85"
+                />
+
+                <!-- Đầu người -->
+                <circle
+                    cx="205"
+                    cy="71"
+                    r="20"
+                    fill="#37a20d"
+                />
+
+                <!-- Thân người -->
+                <path
+                    d="
+                        M205 99
+                        C189 116 183 141 183 166
+                        L205 205
+                        L227 166
+                        C227 141 221 116 205 99
+                        Z
+                    "
+                    fill="#2d9609"
+                />
+
+                <!-- Cánh tay -->
+                <path
+                    d="
+                        M197 113
+                        C174 111 151 99 130 83
+                        C144 110 165 132 188 145
+                        Z
+                    "
+                    fill="#36a40d"
+                />
+
+                <!-- Lá bên phải -->
+                <path
+                    d="
+                        M211 173
+                        C226 116 267 80 320 74
+                        C310 128 269 169 211 199
+                        Z
+                    "
+                    fill="url(#leafGreen)"
+                />
+
+                <!-- Gân lá -->
+                <path
+                    d="
+                        M215 186
+                        C241 150 269 119 306 88
+                    "
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                />
+
+                <path
+                    d="
+                        M252 143 L245 111
+                        M274 122 L268 96
+                        M248 147 L279 143
+                        M270 124 L297 119
+                    "
+                    fill="none"
+                    stroke="#ffffff"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                />
+
+                <!-- Chữ logo -->
+                <text
+                    x="210"
+                    y="236"
+                    text-anchor="middle"
+                    fill="#148b18"
+                    font-family="Arial, Helvetica, sans-serif"
+                    font-size="42"
+                    font-weight="900"
+                    letter-spacing="1"
+                >
+                    TÌM KHỎE
+                </text>
+
+                <text
+                    x="210"
+                    y="270"
+                    text-anchor="middle"
+                    fill="#123d2a"
+                    font-family="Arial, Helvetica, sans-serif"
+                    font-size="29"
+                    font-weight="900"
+                    letter-spacing="4"
+                >
+                    MỖI NGÀY
+                </text>
+
+                <text
+                    x="210"
+                    y="294"
+                    text-anchor="middle"
+                    fill="#55715f"
+                    font-family="Arial, Helvetica, sans-serif"
+                    font-size="11"
+                    font-weight="700"
+                    letter-spacing="0.4"
+                >
+                    LẮNG NGHE CƠ THỂ · BẢO VỆ TƯƠNG LAI
+                </text>
+
+                <path
+                    d="M204 301 C201 296 193 297 193 303 C193 308 204 313 204 313 C204 313 215 308 215 303 C215 297 207 296 204 301Z"
+                    fill="#e5232b"
+                    transform="translate(0,-4)"
+                />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- ==================================================
+         THANH ĐẦU TRANG
+    ================================================== -->
+    <header class="header">
+        <div class="container navbar">
+
+            <a
+                href="#trang-chu"
+                class="logo-link"
+                aria-label="Tìm Khỏe Mỗi Ngày"
+            >
+                <svg
+                    class="brand-logo"
+                    viewBox="0 0 420 310"
+                    role="img"
+                    aria-label="Logo Tìm Khỏe Mỗi Ngày"
+                >
+                    <use href="#full-logo"></use>
+                </svg>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Mở menu"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                ☰
+            </button>
+
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
+                <li>
+                    <a href="#trang-chu">
+                        Trang chủ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gioi-thieu">
+                        Giới thiệu
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#noi-dung">
+                        Nội dung
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#lien-he">
+                        Liên hệ
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="tel:0909584079"
+                        class="nav-contact"
+                    >
+                        ☎ 0909 584 079
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ==================================================
+             PHẦN GIỚI THIỆU ĐẦU TRANG
+        ================================================== -->
+        <section
+            class="hero"
+            id="trang-chu"
+        >
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <div class="hero-label">
+                        🌿 Chăm sóc sức khỏe mỗi ngày
+                    </div>
+
+                    <h1>
+                        Sống khỏe hơn từ những
+                        <span>thay đổi nhỏ</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Tìm Khỏe Mỗi Ngày chia sẻ kiến thức về
+                        dinh dưỡng, thói quen sống lành mạnh và
+                        các sản phẩm hỗ trợ chăm sóc sức khỏe
+                        phù hợp với nhu cầu hằng ngày.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a
+                            href="tel:0909584079"
+                            class="button"
+                        >
+                            ☎ Gọi tư vấn: 0909 584 079
+                        </a>
+
+                        <a
+                            href="#noi-dung"
+                            class="button button-outline"
+                        >
+                            Xem nội dung
+                        </a>
+                    </div>
+
+                    <p class="hero-note">
+                        Hỗ trợ cung cấp thông tin qua số điện thoại
+                        <strong>0909 584 079</strong>.
+                    </p>
+                </div>
+
+                <div class="hero-card">
+                    <div class="hero-logo-wrap">
+                        <svg
+                            viewBox="0 0 420 310"
+                            role="img"
+                            aria-label="Logo Tìm Khỏe Mỗi Ngày"
+                        >
+                            <use href="#full-logo"></use>
+                        </svg>
+                    </div>
+
+                    <h3>
+                        Đồng hành cùng sức khỏe của bạn
+                    </h3>
+
+                    <ul class="benefit-list">
+                        <li>
+                            <span class="check">✓</span>
+                            <span>
+                                Thông tin dinh dưỡng đơn giản,
+                                dễ đọc và dễ áp dụng.
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            <span>
+                                Gợi ý những thói quen sống lành mạnh
+                                trong cuộc sống hằng ngày.
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="check">✓</span>
+                            <span>
+                                Cung cấp thông tin sản phẩm hỗ trợ
+                                sức khỏe rõ ràng.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             THÔNG TIN NHANH
+        ================================================== -->
+        <div class="quick-info">
+            <div class="container">
+                <div class="quick-grid">
+
+                    <div class="quick-item">
+                        <strong>Dinh dưỡng</strong>
+                        <span>
+                            Kiến thức dễ hiểu
+                        </span>
+                    </div>
+
+                    <div class="quick-item">
+                        <strong>Sống khỏe</strong>
+                        <span>
+                            Thói quen tích cực
+                        </span>
+                    </div>
+
+                    <div class="quick-item">
+                        <strong>Hỗ trợ</strong>
+                        <span>
+                            Liên hệ nhanh chóng
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================================================
+             NỘI DUNG CHÍNH
+        ================================================== -->
+        <section
+            class="section section-light"
+            id="noi-dung"
+        >
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">
+                        Nội dung chính
+                    </span>
+
+                    <h2>
+                        Chăm sóc sức khỏe chủ động mỗi ngày
+                    </h2>
+
+                    <p>
+                        Nội dung được trình bày rõ ràng, trực quan
+                        và tập trung vào những kiến thức có thể
+                        tham khảo trong cuộc sống hằng ngày.
+                    </p>
+                </div>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <div class="card-icon">
+                            🥗
+                        </div>
+
+                        <h3>
+                            Dinh dưỡng hằng ngày
+                        </h3>
+
+                        <p>
+                            Chia sẻ kiến thức về lựa chọn thực phẩm,
+                            xây dựng bữa ăn cân bằng và duy trì
+                            thói quen ăn uống phù hợp.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            🌿
+                        </div>
+
+                        <h3>
+                            Sống khỏe chủ động
+                        </h3>
+
+                        <p>
+                            Gợi ý đơn giản về vận động, giấc ngủ,
+                            tinh thần và các thói quen tích cực
+                            trong cuộc sống.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            💙
+                        </div>
+
+                        <h3>
+                            Sản phẩm hỗ trợ
+                        </h3>
+
+                        <p>
+                            Cung cấp thông tin cơ bản về các nhóm
+                            sản phẩm hỗ trợ sức khỏe để người dùng
+                            tìm hiểu và tham khảo.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             GIỚI THIỆU
+        ================================================== -->
+        <section
+            class="section"
+            id="gioi-thieu"
+        >
+            <div class="container about-grid">
+
+                <div class="about-visual">
+                    <div class="about-logo">
+                        <svg
+                            viewBox="0 0 420 310"
+                            role="img"
+                            aria-label="Logo Tìm Khỏe Mỗi Ngày"
+                        >
+                            <use href="#full-logo"></use>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-label">
+                        Về chúng tôi
+                    </span>
+
+                    <h2>
+                        Kiến thức dễ hiểu cho một cuộc sống khỏe mạnh
+                    </h2>
+
+                    <p>
+                        Tìm Khỏe Mỗi Ngày được xây dựng với mong muốn
+                        mang đến những nội dung gần gũi về dinh dưỡng
+                        và chăm sóc sức khỏe. Website ưu tiên cách
+                        trình bày rõ ràng, dễ đọc và thuận tiện khi
+                        xem trên điện thoại.
+                    </p>
+
+                    <div class="about-points">
+
+                        <div class="about-point">
+                            <span class="check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Thông tin trực quan
+                                </strong>
+
+                                <p>
+                                    Nội dung được chia thành các chủ đề
+                                    rõ ràng, giúp người đọc dễ theo dõi.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-point">
+                            <span class="check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Cập nhật định kỳ
+                                </strong>
+
+                                <p>
+                                    Bài viết, dịch vụ và sản phẩm có thể
+                                    được bổ sung theo từng giai đoạn.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="about-point">
+                            <span class="check">
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Hỗ trợ nhanh chóng
+                                </strong>
+
+                                <p>
+                                    Người dùng có thể gọi điện để được
+                                    cung cấp thêm thông tin.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="tel:0909584079"
+                        class="button"
+                    >
+                        Liên hệ tư vấn
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================================================
+             GIÁ TRỊ CỐT LÕI
+        ================================================== -->
+        <section class="section section-light">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">
+                        Giá trị hướng đến
+                    </span>
+
+                    <h2>
+                        Đơn giản, rõ ràng và thiết thực
+                    </h2>
+
+                    <p>
+                        Website hướng đến trải nghiệm đọc dễ dàng,
+                        nội dung gần gũi và thuận tiện khi liên hệ.
+                    </p>
+                </div>
+
+                <div class="steps">
+
+                    <article class="step">
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Dễ tìm hiểu
+                        </h3>
+
+                        <p>
+                            Nội dung ngắn gọn, chia theo từng chủ đề
+                            để người đọc dễ tiếp cận.
+                        </p>
+                    </article>
+
+                    <article class="step">
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Dễ áp dụng
+                        </h3>
+
+                        <p>
+                            Tập trung vào những thông tin gần gũi
+                            với đời sống hằng ngày.
+                        </p>
+                    </article>
+
+                    <article class="step">
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Dễ liên hệ
+                        </h3>
+
+                        <p>
+                            Nút gọi điện được hiển thị rõ ràng trên
+                            cả máy tính và điện thoại.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+             LIÊN HỆ
+        ================================================== -->
+        <section
+            class="section"
+            id="lien-he"
+        >
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <div class="contact-content">
+                        <h2>
+                            Bạn cần thêm thông tin?
+                        </h2>
+
+                        <p>
+                            Liên hệ với Tìm Khỏe Mỗi Ngày để được
+                            cung cấp thêm thông tin về dinh dưỡng,
+                            lối sống lành mạnh và các sản phẩm hỗ trợ
+                            chăm sóc sức khỏe.
+                        </p>
+                    </div>
+
+                    <div class="contact-actions">
+                        <a
+                            href="tel:0909584079"
+                            class="button phone-button"
+                        >
+                            ☎ 0909 584 079
+                        </a>
+
+                        <span class="phone-caption">
+                            Bấm để gọi trực tiếp
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="disclaimer">
+                    <strong>Lưu ý:</strong>
+                    Nội dung trên website chỉ nhằm mục đích cung cấp
+                    thông tin tham khảo, không thay thế việc khám,
+                    chẩn đoán hoặc điều trị của bác sĩ và nhân viên y tế.
+                    Sản phẩm hỗ trợ sức khỏe không phải là thuốc và
+                    không có tác dụng thay thế thuốc chữa bệnh.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================================================
+         CHÂN TRANG
+    ================================================== -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a
+                        href="#trang-chu"
+                        class="footer-logo-box"
+                        aria-label="Về đầu trang"
+                    >
+                        <svg
+                            class="footer-brand-logo"
+                            viewBox="0 0 420 310"
+                            role="img"
+                            aria-label="Logo Tìm Khỏe Mỗi Ngày"
+                        >
+                            <use href="#full-logo"></use>
+                        </svg>
+                    </a>
+
+                    <p class="footer-description">
+                        Chia sẻ kiến thức dinh dưỡng, lối sống lành mạnh
+                        và thông tin sản phẩm hỗ trợ chăm sóc sức khỏe.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>
+                        Liên kết
+                    </h3>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="#trang-chu">
+                                Trang chủ
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#gioi-thieu">
+                                Giới thiệu
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#noi-dung">
+                                Nội dung
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#lien-he">
+                                Liên hệ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>
+                        Thông tin liên hệ
+                    </h3>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="tel:0909584079">
+                                Điện thoại: 0909 584 079
+                            </a>
+                        </li>
+
+                        <li>
+                            Tìm Khỏe Mỗi Ngày
+                        </li>
+
+                        <li>
+                            Việt Nam
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                ©
+                <span id="currentYear"></span>
+                Tìm Khỏe Mỗi Ngày. Bảo lưu mọi quyền.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Nút gọi điện ở góc màn hình -->
+    <a
+        href="tel:0909584079"
+        class="floating-phone"
+        aria-label="Gọi điện đến Tìm Khỏe Mỗi Ngày"
+        title="Gọi 0909 584 079"
+    >
+        ☎
+    </a>
+
+    <script>
+        /*
+         * Tự động cập nhật năm ở chân trang
+         */
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        /*
+         * Menu trên điện thoại
+         */
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        function closeMenu() {
+            navLinks.classList.remove("open");
+            document.body.classList.remove("menu-open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.textContent = "☰";
+        }
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+                const isOpen =
+                    navLinks.classList.toggle("open");
+
+                document.body.classList.toggle(
+                    "menu-open",
+                    isOpen
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuButton.textContent =
+                    isOpen ? "✕" : "☰";
+            }
+        );
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
+            });
+
+        window.addEventListener(
+            "resize",
+            function () {
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+            }
+        );
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>
