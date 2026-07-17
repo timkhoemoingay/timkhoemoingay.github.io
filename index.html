@@ -10,10 +10,26 @@
 
     <meta
         name="description"
-        content="Tìm Khỏe Mỗi Ngày chia sẻ đột quỵ, huyết áp, tiểu đường, tim mạch; thông tin dinh dưỡng, lối sống lành mạnh và sản phẩm hỗ trợ chăm sóc sức khỏe."
+        content="Tim Khỏe Mỗi Ngày chia sẻ kiến thức sức khỏe dễ hiểu, video và tài liệu miễn phí về tim mạch, huyết áp, đột quỵ, đường huyết, dinh dưỡng và vận động."
     >
 
-    <title>Tìm Khỏe Mỗi Ngày</title>
+    <title>Tim Khỏe Mỗi Ngày | Kiến thức sức khỏe dễ hiểu</title>
+    <link rel="canonical" href="https://timkhoemoingay.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tim Khỏe Mỗi Ngày">
+    <meta property="og:description" content="Kiến thức sức khỏe dễ hiểu, video hữu ích và tài liệu miễn phí về tim mạch, huyết áp, đột quỵ, đường huyết, dinh dưỡng và vận động.">
+    <meta property="og:url" content="https://timkhoemoingay.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Tim Khỏe Mỗi Ngày",
+      "url": "https://timkhoemoingay.github.io/",
+      "sameAs": ["https://www.youtube.com/channel/UCJ4whoEwO8ikvk8uUE5Wu0g"]
+    }
+    </script>
+
 
     <!-- Biểu tượng trên tab trình duyệt -->
     <link
@@ -1046,6 +1062,139 @@
                 height: 57px;
             }
         }
+    
+        /* ==================================================
+           TRANG CHỦ PHIÊN BẢN 2
+        ================================================== */
+        .nav-links { gap: 17px; }
+        .nav-links a { font-size: 14px; }
+        .hero-v2 { padding: 72px 0 82px; }
+        .hero-v2 .hero-grid { grid-template-columns: 0.92fr 1.08fr; gap: 48px; }
+        .hero-v2 h1 { font-size: clamp(40px, 5.5vw, 64px); }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            margin-bottom: 20px; padding: 9px 15px;
+            color: var(--green-dark); background: var(--green-light);
+            border: 1px solid #d8efca; border-radius: 999px;
+            font-size: 14px; font-weight: 800;
+        }
+        .video-shell {
+            overflow: hidden; background: #071d2c; border: 7px solid var(--white);
+            border-radius: 25px; box-shadow: var(--shadow);
+        }
+        .video-ratio { position: relative; padding-top: 56.25%; }
+        .video-ratio iframe {
+            position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+        }
+        .video-caption {
+            display: flex; align-items: center; justify-content: space-between; gap: 18px;
+            padding: 17px 20px; color: var(--white); background: #0d344e;
+        }
+        .video-caption strong { font-size: 15px; }
+        .text-link { color: #9cdbff; font-size: 14px; font-weight: 800; }
+        .topic-grid {
+            display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px;
+        }
+        .topic-card {
+            min-height: 150px; display: flex; padding: 22px 15px;
+            flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+            text-align: center; background: var(--white); border: 1px solid var(--border);
+            border-radius: 19px; box-shadow: 0 10px 25px rgba(15,103,160,.07);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .topic-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .topic-icon { font-size: 34px; }
+        .topic-card strong { color: var(--primary-dark); font-size: 16px; }
+        .feature-grid {
+            display: grid; grid-template-columns: 1.35fr .65fr; gap: 26px; align-items: stretch;
+        }
+        .feature-panel {
+            padding: 32px; background: var(--white); border: 1px solid var(--border);
+            border-radius: 23px; box-shadow: var(--shadow);
+        }
+        .feature-panel h3 { margin-bottom: 12px; font-size: 26px; }
+        .feature-panel p { color: var(--text-light); }
+        .feature-list { display: grid; gap: 13px; margin-top: 22px; list-style: none; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 10px; }
+        .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 23px; }
+        .article-card {
+            overflow: hidden; background: var(--white); border: 1px solid var(--border);
+            border-radius: 21px; box-shadow: 0 12px 30px rgba(15,103,160,.08);
+        }
+        .article-cover {
+            min-height: 150px; display: grid; place-items: center; font-size: 58px;
+            background: linear-gradient(135deg, var(--primary-light), var(--green-light));
+        }
+        .article-body { padding: 25px; }
+        .article-tag {
+            display: inline-block; margin-bottom: 10px; padding: 5px 10px;
+            color: var(--green-dark); background: var(--green-light);
+            border-radius: 999px; font-size: 12px; font-weight: 800;
+        }
+        .article-body h3 { margin-bottom: 10px; font-size: 20px; }
+        .article-body p { margin-bottom: 18px; color: var(--text-light); font-size: 15px; }
+        .resource-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .resource-card {
+            display: grid; grid-template-columns: 58px 1fr auto; align-items: center; gap: 17px;
+            padding: 21px; background: var(--white); border: 1px solid var(--border);
+            border-radius: 18px;
+        }
+        .resource-icon {
+            width: 58px; height: 58px; display: grid; place-items: center;
+            background: var(--primary-light); border-radius: 16px; font-size: 27px;
+        }
+        .resource-card h3 { margin-bottom: 4px; font-size: 17px; }
+        .resource-card p { color: var(--text-light); font-size: 13px; }
+        .resource-download {
+            min-width: 112px; padding: 10px 13px; text-align: center;
+            color: #7a6a2e; background: #fff8df; border: 1px solid #eddc95;
+            border-radius: 11px; font-size: 13px; font-weight: 800; cursor: not-allowed;
+        }
+        .resource-download.ready {
+            color: var(--white); background: var(--green); border-color: var(--green);
+            cursor: pointer;
+        }
+        .upload-banner {
+            display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 25px;
+            margin-top: 30px; padding: 28px;
+            color: var(--white); background: linear-gradient(135deg,var(--primary-dark),var(--primary),#159f94);
+            border-radius: 22px;
+        }
+        .upload-banner h3 { margin-bottom: 5px; font-size: 22px; }
+        .upload-banner p { color: rgba(255,255,255,.84); }
+        .daily-card {
+            display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
+            padding: 34px; background: linear-gradient(135deg,#f2fbff,#f2fdec);
+            border: 1px solid var(--border); border-radius: 24px;
+        }
+        .daily-icon { font-size: 55px; }
+        .daily-card h2 { margin-bottom: 7px; font-size: clamp(26px,4vw,38px); }
+        .daily-card p { color: var(--text-light); }
+        .source-note {
+            margin-top: 22px; padding: 18px 20px; color: #6d5a1f;
+            background: #fff9e7; border: 1px solid #f0dda0; border-radius: 14px;
+            font-size: 14px;
+        }
+        @media (max-width: 1050px) {
+            .topic-grid { grid-template-columns: repeat(3, 1fr); }
+            .resource-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 13px; }
+        }
+        @media (max-width: 900px) {
+            .hero-v2 .hero-grid, .feature-grid { grid-template-columns: 1fr; }
+            .article-grid { grid-template-columns: 1fr; }
+            .upload-banner, .daily-card { grid-template-columns: 1fr; text-align: center; }
+            .hero-v2 { padding-top: 55px; }
+        }
+        @media (max-width: 620px) {
+            .topic-grid { grid-template-columns: repeat(2, 1fr); }
+            .resource-card { grid-template-columns: 48px 1fr; }
+            .resource-icon { width: 48px; height: 48px; }
+            .resource-download { grid-column: 1 / -1; width: 100%; }
+            .section { padding: 62px 0; }
+        }
+
     </style>
 </head>
 
@@ -1305,13 +1454,13 @@
             <a
                 href="#trang-chu"
                 class="logo-link"
-                aria-label="Tìm Khỏe Mỗi Ngày"
+                aria-label="Tim Khỏe Mỗi Ngày"
             >
                 <svg
                     class="brand-logo"
                     viewBox="0 0 420 310"
                     role="img"
-                    aria-label="Logo Tìm Khỏe Mỗi Ngày"
+                    aria-label="Logo Tim Khỏe Mỗi Ngày"
                 >
                     <use href="#full-logo"></use>
                 </svg>
@@ -1328,480 +1477,235 @@
                 ☰
             </button>
 
-            <ul
-                class="nav-links"
-                id="navLinks"
-            >
-                <li>
-                    <a href="#trang-chu">
-                        Trang chủ
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#gioi-thieu">
-                        Giới thiệu
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#noi-dung">
-                        Nội dung
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#lien-he">
-                        Liên hệ
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="tel:0966568965"
-                        class="nav-contact"
-                    >
-                        ☎ 0966 568 965 
-                    </a>
-                </li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#trang-chu">Trang chủ</a></li>
+                <li><a href="#chu-de">Chủ đề</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#bai-viet">Bài viết</a></li>
+                <li><a href="#tai-lieu">Tài liệu</a></li>
+                <li><a href="#gioi-thieu">Giới thiệu</a></li>
             </ul>
 
         </div>
     </header>
 
+
     <main>
-
-        <!-- ==================================================
-             PHẦN GIỚI THIỆU ĐẦU TRANG
-        ================================================== -->
-        <section
-            class="hero"
-            id="trang-chu"
-        >
+        <section class="hero hero-v2" id="trang-chu">
             <div class="container hero-grid">
-
-                <div class="hero-copy">
-                    <div class="hero-label">
-                        🌿 Chăm sóc sức khỏe mỗi ngày
-                    </div>
-
-                    <h1>
-                        Sống khỏe hơn từ những
-                        <span>thay đổi nhỏ</span>
-                    </h1>
-
+                <div>
+                    <div class="hero-eyebrow">💚 Kiến thức nhỏ • Bảo vệ sức khỏe lớn</div>
+                    <h1>Chủ động chăm sóc <span>trái tim mỗi ngày</span></h1>
                     <p class="hero-description">
-                        Tìm Khỏe Mỗi Ngày chia sẻ kiến thức về
-                        dinh dưỡng, thói quen sống lành mạnh và
-                        các sản phẩm hỗ trợ chăm sóc sức khỏe
-                        phù hợp với nhu cầu hằng ngày.
+                        Video ngắn, kiến thức dễ hiểu và tài liệu miễn phí về tim mạch,
+                        huyết áp, đột quỵ, đường huyết, dinh dưỡng và vận động.
                     </p>
-
                     <div class="hero-actions">
-                        <a
-                            href="tel:0966568965"
-                            class="button"
-                        >
-                            ☎ Gọi tư vấn: 0966 568 965
-                        </a>
-
-                        <a
-                            href="#noi-dung"
-                            class="button button-outline"
-                        >
-                            Xem nội dung
-                        </a>
+                        <a class="button" href="#video">▶ Xem video mới</a>
+                        <a class="button button-outline" href="#tai-lieu">⬇ Tải tài liệu miễn phí</a>
                     </div>
-
-                    <p class="hero-note">
-                        Hỗ trợ cung cấp thông tin qua số điện thoại
-                        <strong>0909 584 079</strong>.
-                    </p>
+                    <p class="hero-note">Nội dung giáo dục sức khỏe, có ghi nguồn tham khảo và ngày cập nhật.</p>
                 </div>
-
-                <div class="hero-card">
-                    <div class="hero-logo-wrap">
-                        <svg
-                            viewBox="0 0 420 310"
-                            role="img"
-                            aria-label="Logo Tìm Khỏe Mỗi Ngày"
-                        >
-                            <use href="#full-logo"></use>
-                        </svg>
+                <div class="video-shell">
+                    <div class="video-ratio">
+                        <iframe
+                            src="https://www.youtube.com/embed/videoseries?list=UUJ4whoEwO8ikvk8uUE5Wu0g"
+                            title="Video mới từ kênh Tim Khỏe Mỗi Ngày"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
                     </div>
-
-                    <h3>
-                        Đồng hành cùng sức khỏe của bạn
-                    </h3>
-
-                    <ul class="benefit-list">
-                        <li>
-                            <span class="check">✓</span>
-                            <span>
-                                Thông tin dinh dưỡng đơn giản,
-                                dễ đọc và dễ áp dụng.
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="check">✓</span>
-                            <span>
-                                Gợi ý những thói quen sống lành mạnh
-                                trong cuộc sống hằng ngày.
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="check">✓</span>
-                            <span>
-                                Cung cấp thông tin sản phẩm hỗ trợ
-                                sức khỏe rõ ràng.
-                            </span>
-                        </li>
-                    </ul>
+                    <div class="video-caption">
+                        <strong>Video mới nhất từ Tim Khỏe Mỗi Ngày</strong>
+                        <a class="text-link" href="https://www.youtube.com/channel/UCJ4whoEwO8ikvk8uUE5Wu0g" target="_blank" rel="noopener">Mở YouTube ↗</a>
+                    </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- ==================================================
-             THÔNG TIN NHANH
-        ================================================== -->
-        <div class="quick-info">
+        <section class="section" id="chu-de">
             <div class="container">
-                <div class="quick-grid">
-
-                    <div class="quick-item">
-                        <strong>Dinh dưỡng</strong>
-                        <span>
-                            Kiến thức dễ hiểu
-                        </span>
-                    </div>
-
-                    <div class="quick-item">
-                        <strong>Sống khỏe</strong>
-                        <span>
-                            Thói quen tích cực
-                        </span>
-                    </div>
-
-                    <div class="quick-item">
-                        <strong>Hỗ trợ</strong>
-                        <span>
-                            Liên hệ nhanh chóng
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================================================
-             NỘI DUNG CHÍNH
-        ================================================== -->
-        <section
-            class="section section-light"
-            id="noi-dung"
-        >
-            <div class="container">
-
                 <div class="section-heading">
-                    <span class="section-label">
-                        Nội dung chính
-                    </span>
-
-                    <h2>
-                        Chăm sóc sức khỏe chủ động mỗi ngày
-                    </h2>
-
-                    <p>
-                        Nội dung được trình bày rõ ràng, trực quan
-                        và tập trung vào những kiến thức có thể
-                        tham khảo trong cuộc sống hằng ngày.
-                    </p>
+                    <span class="section-label">Tra cứu nhanh</span>
+                    <h2>Chọn chủ đề Anh/Chị quan tâm</h2>
+                    <p>Các nội dung được sắp xếp rõ ràng để dễ xem, dễ lưu và dễ chia sẻ cho người thân.</p>
                 </div>
-
-                <div class="cards">
-
-                    <article class="card">
-                        <div class="card-icon">
-                            🥗
-                        </div>
-
-                        <h3>
-                            Dinh dưỡng hằng ngày
-                        </h3>
-
-                        <p>
-                            Chia sẻ kiến thức về lựa chọn thực phẩm,
-                            xây dựng bữa ăn cân bằng và duy trì
-                            thói quen ăn uống phù hợp.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-icon">
-                            🌿
-                        </div>
-
-                        <h3>
-                            Sống khỏe chủ động
-                        </h3>
-
-                        <p>
-                            Gợi ý đơn giản về vận động, giấc ngủ,
-                            tinh thần và các thói quen tích cực
-                            trong cuộc sống.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <div class="card-icon">
-                            💙
-                        </div>
-
-                        <h3>
-                            Sản phẩm hỗ trợ
-                        </h3>
-
-                        <p>
-                            Cung cấp thông tin cơ bản về các nhóm
-                            sản phẩm hỗ trợ sức khỏe để người dùng
-                            tìm hiểu và tham khảo.
-                        </p>
-                    </article>
-
+                <div class="topic-grid">
+                    <a class="topic-card" href="#bai-viet"><span class="topic-icon">❤️</span><strong>Tim mạch</strong></a>
+                    <a class="topic-card" href="#bai-viet"><span class="topic-icon">🩺</span><strong>Huyết áp</strong></a>
+                    <a class="topic-card" href="#tai-lieu"><span class="topic-icon">🚑</span><strong>Đột quỵ</strong></a>
+                    <a class="topic-card" href="#tai-lieu"><span class="topic-icon">🩸</span><strong>Đường huyết</strong></a>
+                    <a class="topic-card" href="#bai-viet"><span class="topic-icon">🥗</span><strong>Dinh dưỡng</strong></a>
+                    <a class="topic-card" href="#bai-viet"><span class="topic-icon">🚶</span><strong>Vận động</strong></a>
                 </div>
             </div>
         </section>
 
-        <!-- ==================================================
-             GIỚI THIỆU
-        ================================================== -->
-        <section
-            class="section"
-            id="gioi-thieu"
-        >
+        <section class="section section-light" id="video">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">Video sức khỏe</span>
+                    <h2>Mỗi ngày một phút chăm sóc sức khỏe</h2>
+                    <p>Theo dõi các video mới, ngắn gọn và thuận tiện xem trên điện thoại.</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="video-shell">
+                        <div class="video-ratio">
+                            <iframe
+                                src="https://www.youtube.com/embed/videoseries?list=UUJ4whoEwO8ikvk8uUE5Wu0g"
+                                title="Danh sách video Tim Khỏe Mỗi Ngày"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <aside class="feature-panel">
+                        <span class="section-label">Nội dung nổi bật</span>
+                        <h3>Xem – Lưu – Chia sẻ</h3>
+                        <p>Mỗi video tập trung vào một vấn đề cụ thể để người xem dễ ghi nhớ và áp dụng.</p>
+                        <ul class="feature-list">
+                            <li><span class="check">✓</span><span>Dấu hiệu cơ thể không nên bỏ qua</span></li>
+                            <li><span class="check">✓</span><span>Đo huyết áp đúng cách</span></li>
+                            <li><span class="check">✓</span><span>Bữa ăn và vận động lành mạnh</span></li>
+                        </ul>
+                        <a class="button" style="margin-top:24px" href="https://www.youtube.com/channel/UCJ4whoEwO8ikvk8uUE5Wu0g" target="_blank" rel="noopener">Theo dõi YouTube</a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="bai-viet">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">Kiến thức mới</span>
+                    <h2>Thông tin dễ hiểu, dễ áp dụng</h2>
+                    <p>Nội dung tóm tắt giúp người xem nhận biết vấn đề và chủ động tìm hỗ trợ y tế khi cần.</p>
+                </div>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <div class="article-cover">🩺</div>
+                        <div class="article-body"><span class="article-tag">HUYẾT ÁP</span><h3>Đo huyết áp đúng cách tại nhà</h3><p>Những lỗi thường gặp có thể làm kết quả cao hoặc thấp hơn thực tế.</p><a class="text-link" href="#tai-lieu">Xem tài liệu liên quan →</a></div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-cover">🚑</div>
+                        <div class="article-body"><span class="article-tag">ĐỘT QUỴ</span><h3>Ghi nhớ nguyên tắc BE FAST</h3><p>Nhận biết sớm dấu hiệu cảnh báo và gọi cấp cứu kịp thời.</p><a class="text-link" href="#tai-lieu">Xem tài liệu liên quan →</a></div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-cover">🥗</div>
+                        <div class="article-body"><span class="article-tag">DINH DƯỠNG</span><h3>Bữa ăn lành mạnh cho trái tim</h3><p>Ưu tiên thực phẩm phù hợp và giảm những thói quen không có lợi.</p><a class="text-link" href="#tai-lieu">Xem tài liệu liên quan →</a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light" id="tai-lieu">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="section-label">Thư viện miễn phí</span>
+                    <h2>Tải tài liệu chăm sóc sức khỏe</h2>
+                    <p>Nút tải sẽ tự động hoạt động ngay khi tài liệu PDF tương ứng được đưa lên website.</p>
+                </div>
+                <div class="resource-grid">
+                    <article class="resource-card">
+                        <div class="resource-icon">🩺</div>
+                        <div><h3>Checklist đo huyết áp đúng cách</h3><p>Các bước chuẩn bị và thao tác đo tại nhà.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/checklist-do-huyet-ap-dung-cach.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">📋</div>
+                        <div><h3>Nhật ký huyết áp 7 ngày</h3><p>Mẫu ghi sáng, tối và lưu ý triệu chứng.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/nhat-ky-huyet-ap-7-ngay.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">🚑</div>
+                        <div><h3>Infographic BE FAST</h3><p>Nhận biết nhanh dấu hiệu cảnh báo đột quỵ.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/infographic-be-fast-dot-quy.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">☎️</div>
+                        <div><h3>Xử trí khi nghi ngờ đột quỵ</h3><p>Những việc nên làm và không nên làm.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/xu-tri-khi-nghi-ngo-dot-quy.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">❤️</div>
+                        <div><h3>Dấu hiệu nhồi máu cơ tim</h3><p>Tài liệu cảnh báo ngắn gọn, dễ chia sẻ.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/dau-hieu-nhoi-mau-co-tim.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">🩸</div>
+                        <div><h3>Checklist kiểm soát đường huyết</h3><p>Theo dõi thói quen ăn uống và vận động.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/checklist-kiem-soat-duong-huyet.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">🌿</div>
+                        <div><h3>21 thói quen sau tuổi 40</h3><p>Cẩm nang chăm sóc sức khỏe mỗi ngày.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/cam-nang-21-thoi-quen-sau-40.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">🥗</div>
+                        <div><h3>Thực đơn giảm muối 7 ngày</h3><p>Gợi ý bữa ăn tham khảo, dễ áp dụng.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/thuc-don-giam-muoi-7-ngay.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">🚶</div>
+                        <div><h3>Lịch vận động 30 ngày</h3><p>Kế hoạch vận động nhẹ, tăng dần hợp lý.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/lich-van-dong-30-ngay.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                    <article class="resource-card">
+                        <div class="resource-icon">💊</div>
+                        <div><h3>Mẫu ghi thuốc đang sử dụng</h3><p>Giúp chuẩn bị thông tin khi đi khám.</p></div>
+                        <a class="resource-download" href="#" data-file="tai-lieu/mau-ghi-thuoc-dang-su-dung.pdf" aria-disabled="true">Sắp phát hành</a>
+                    </article>
+                </div>
+                <div class="upload-banner">
+                    <div>
+                        <h3>📤 Khu vực đưa tài liệu mới lên website</h3>
+                        <p>Dành cho quản trị viên. Trang hướng dẫn có sẵn tên tệp chuẩn và nút tải tài liệu lên GitHub.</p>
+                    </div>
+                    <a class="button" href="quan-tri-tai-lieu.html">Mở trang tải tài liệu</a>
+                </div>
+                <div class="source-note"><strong>Lưu ý:</strong> Tài liệu sức khỏe cần ghi nguồn tham khảo, ngày cập nhật và không thay thế việc khám, chẩn đoán hoặc điều trị của bác sĩ.</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="daily-card">
+                    <div class="daily-icon">🌿</div>
+                    <div><span class="section-label">Thói quen hôm nay</span><h2>Đứng dậy và vận động nhẹ sau mỗi giờ ngồi lâu</h2><p>Một thay đổi nhỏ, dễ thực hiện để xây dựng lối sống chủ động hơn.</p></div>
+                    <a class="button" href="https://www.youtube.com/channel/UCJ4whoEwO8ikvk8uUE5Wu0g" target="_blank" rel="noopener">Xem thêm video</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light" id="gioi-thieu">
             <div class="container about-grid">
-
-                <div class="about-visual">
-                    <div class="about-logo">
-                        <svg
-                            viewBox="0 0 420 310"
-                            role="img"
-                            aria-label="Logo Tìm Khỏe Mỗi Ngày"
-                        >
-                            <use href="#full-logo"></use>
-                        </svg>
-                    </div>
-                </div>
-
+                <div class="about-visual"><div class="about-logo"><svg viewBox="0 0 420 310" role="img" aria-label="Logo Tim Khỏe Mỗi Ngày"><use href="#full-logo"></use></svg></div></div>
                 <div class="about-content">
-                    <span class="section-label">
-                        Về chúng tôi
-                    </span>
-
-                    <h2>
-                        Kiến thức dễ hiểu cho một cuộc sống khỏe mạnh
-                    </h2>
-
-                    <p>
-                        Tìm Khỏe Mỗi Ngày được xây dựng với mong muốn
-                        mang đến những nội dung gần gũi về dinh dưỡng
-                        và chăm sóc sức khỏe. Website ưu tiên cách
-                        trình bày rõ ràng, dễ đọc và thuận tiện khi
-                        xem trên điện thoại.
-                    </p>
-
+                    <span class="section-label">Về Tim Khỏe Mỗi Ngày</span>
+                    <h2>Kiến thức gần gũi cho một cuộc sống khỏe mạnh</h2>
+                    <p>Website chia sẻ video, bài viết và tài liệu sức khỏe theo cách rõ ràng, dễ đọc và thuận tiện trên điện thoại.</p>
                     <div class="about-points">
-
-                        <div class="about-point">
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            <div>
-                                <strong>
-                                    Thông tin trực quan
-                                </strong>
-
-                                <p>
-                                    Nội dung được chia thành các chủ đề
-                                    rõ ràng, giúp người đọc dễ theo dõi.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="about-point">
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            <div>
-                                <strong>
-                                    Cập nhật định kỳ
-                                </strong>
-
-                                <p>
-                                    Bài viết, dịch vụ và sản phẩm có thể
-                                    được bổ sung theo từng giai đoạn.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="about-point">
-                            <span class="check">
-                                ✓
-                            </span>
-
-                            <div>
-                                <strong>
-                                    Hỗ trợ nhanh chóng
-                                </strong>
-
-                                <p>
-                                    Người dùng có thể gọi điện để được
-                                    cung cấp thêm thông tin.
-                                </p>
-                            </div>
-                        </div>
-
+                        <div class="about-point"><span class="check">✓</span><div><strong>Thông tin minh bạch</strong><p>Ghi nguồn tham khảo và ngày cập nhật.</p></div></div>
+                        <div class="about-point"><span class="check">✓</span><div><strong>Tài liệu miễn phí</strong><p>Có thể tải về, lưu hoặc in cho người thân.</p></div></div>
+                        <div class="about-point"><span class="check">✓</span><div><strong>Kết nối đa nền tảng</strong><p>Theo dõi nội dung mới trên kênh YouTube Tim Khỏe Mỗi Ngày.</p></div></div>
                     </div>
-
-                    <a
-                        href="tel:0966568965"
-                        class="button"
-                    >
-                        Liên hệ tư vấn
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ==================================================
-             GIÁ TRỊ CỐT LÕI
-        ================================================== -->
-        <section class="section section-light">
-            <div class="container">
-
-                <div class="section-heading">
-                    <span class="section-label">
-                        Giá trị hướng đến
-                    </span>
-
-                    <h2>
-                        Đơn giản, rõ ràng và thiết thực
-                    </h2>
-
-                    <p>
-                        Website hướng đến trải nghiệm đọc dễ dàng,
-                        nội dung gần gũi và thuận tiện khi liên hệ.
-                    </p>
-                </div>
-
-                <div class="steps">
-
-                    <article class="step">
-                        <div class="step-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Dễ tìm hiểu
-                        </h3>
-
-                        <p>
-                            Nội dung ngắn gọn, chia theo từng chủ đề
-                            để người đọc dễ tiếp cận.
-                        </p>
-                    </article>
-
-                    <article class="step">
-                        <div class="step-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Dễ áp dụng
-                        </h3>
-
-                        <p>
-                            Tập trung vào những thông tin gần gũi
-                            với đời sống hằng ngày.
-                        </p>
-                    </article>
-
-                    <article class="step">
-                        <div class="step-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Dễ liên hệ
-                        </h3>
-
-                        <p>
-                            Nút gọi điện được hiển thị rõ ràng trên
-                            cả máy tính và điện thoại.
-                        </p>
-                    </article>
-
                 </div>
             </div>
         </section>
 
-        <!-- ==================================================
-             LIÊN HỆ
-        ================================================== -->
-        <section
-            class="section"
-            id="lien-he"
-        >
+        <section class="section">
             <div class="container">
-
-                <div class="contact-box">
-
-                    <div class="contact-content">
-                        <h2>
-                            Bạn cần thêm thông tin?
-                        </h2>
-
-                        <p>
-                            Liên hệ với Tìm Khỏe Mỗi Ngày để được
-                            cung cấp thêm thông tin về dinh dưỡng,
-                            lối sống lành mạnh và các sản phẩm hỗ trợ
-                            chăm sóc sức khỏe.
-                        </p>
-                    </div>
-
-                    <div class="contact-actions">
-                        <a
-                            href="tel:0966568965"
-                            class="button phone-button"
-                        >
-                            ☎ 0909 584 079
-                        </a>
-
-                        <span class="phone-caption">
-                            Bấm để gọi trực tiếp
-                        </span>
-                    </div>
-
-                </div>
-
                 <div class="disclaimer">
-                    <strong>Lưu ý:</strong>
-                    Nội dung trên website chỉ nhằm mục đích cung cấp
-                    thông tin tham khảo, không thay thế việc khám,
-                    chẩn đoán hoặc điều trị của bác sĩ và nhân viên y tế.
-                    Sản phẩm hỗ trợ sức khỏe không phải là thuốc và
-                    không có tác dụng thay thế thuốc chữa bệnh.
+                    <strong>Lưu ý y tế:</strong>
+                    Nội dung trên website chỉ nhằm mục đích giáo dục và cung cấp thông tin tham khảo,
+                    không thay thế việc khám, chẩn đoán hoặc điều trị của bác sĩ và nhân viên y tế.
+                    Khi có dấu hiệu cấp cứu, hãy gọi 115 hoặc đến cơ sở y tế gần nhất.
                 </div>
-
             </div>
         </section>
-
     </main>
 
     <!-- ==================================================
@@ -1822,7 +1726,7 @@
                             class="footer-brand-logo"
                             viewBox="0 0 420 310"
                             role="img"
-                            aria-label="Logo Tìm Khỏe Mỗi Ngày"
+                            aria-label="Logo Tim Khỏe Mỗi Ngày"
                         >
                             <use href="#full-logo"></use>
                         </svg>
@@ -1853,9 +1757,7 @@
                         </li>
 
                         <li>
-                            <a href="#noi-dung">
-                                Nội dung
-                            </a>
+                            <a href="#chu-de">Chủ đề</a>
                         </li>
 
                         <li>
@@ -1879,7 +1781,7 @@
                         </li>
 
                         <li>
-                            Tìm Khỏe Mỗi Ngày
+                            Tim Khỏe Mỗi Ngày
                         </li>
 
                         <li>
@@ -1893,7 +1795,7 @@
             <div class="copyright">
                 ©
                 <span id="currentYear"></span>
-                Tìm Khỏe Mỗi Ngày. Bảo lưu mọi quyền.
+                Tim Khỏe Mỗi Ngày. Bảo lưu mọi quyền.
             </div>
 
         </div>
@@ -1903,7 +1805,7 @@
     <a
         href="tel:0966568965"
         class="floating-phone"
-        aria-label="Gọi điện đến Tìm Khỏe Mỗi Ngày"
+        aria-label="Gọi điện đến Tim Khỏe Mỗi Ngày"
         title="Gọi 0966 568 965"
     >
         ☎
@@ -1986,5 +1888,24 @@
         );
     </script>
 
+
+    <script>
+        document.querySelectorAll(".resource-download[data-file]").forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                if (button.getAttribute("aria-disabled") === "true") event.preventDefault();
+            });
+            fetch(button.getAttribute("data-file"), { method: "HEAD", cache: "no-store" })
+                .then(function (response) {
+                    if (!response.ok) return;
+                    button.href = button.getAttribute("data-file");
+                    button.setAttribute("aria-disabled", "false");
+                    button.classList.add("ready");
+                    button.textContent = "⬇ Tải PDF";
+                })
+                .catch(function () {});
+        });
+    </script>
+
 </body>
 </html>
+

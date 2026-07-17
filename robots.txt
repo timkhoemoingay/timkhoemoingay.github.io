@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://timkhoemoingay.github.io/sitemap.xml
+
